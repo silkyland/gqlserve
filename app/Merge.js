@@ -1,15 +1,18 @@
 import { makeExecutableSchema } from 'graphql-tools'
 import { merge } from 'lodash'
+import path from 'path'
+import { fileLoader, mergeTypes, mergeResolvers } from 'merge-graphql-schemas'
 
-//typeDefs
-import User from './types/User'
-
-//Resolver
-import UserResolver from './resolvers/UserResolver'
+// Merge TypeDefs
+const typesArray = fileLoader(path.join(__dirname, './types'));
+const typeDefs = mergeTypes(typesArray)
+// Merge Resolvers
+const resolversArray = fileLoader(path.join(__dirname, './resolvers'));
+const resolvers = mergeResolvers(resolversArray);
 
 const schema = makeExecutableSchema({
-    typeDefs: [User],
-    resolvers: merge({}, UserResolver)
+    typeDefs,
+    resolvers
 });
 
 export default schema
