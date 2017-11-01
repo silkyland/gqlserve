@@ -1,17 +1,14 @@
 const fs = require('fs')
 const path = require('path')
 const chalk = require('chalk')
-
-console.log(process.argv)
-
 const modelPrototype = require('./resource/model.prototype')
 const typePrototype = require('./resource/type.prototype')
 const resolverPrototype = require('./resource/resolver.prototype')
 let args = process.argv.slice(3)
 
 const modelPath = path.join(__dirname, "../app/models/" + args[1] + ".js")
-const resolverPath = path.join(__dirname, "../app/resolvers/" + args[1] + "Resolver.js")
 const typePath = path.join(__dirname, "../app/types/" + args[1] + ".js")
+const resolverPath = path.join(__dirname, "../app/resolvers/" + args[1] + "Resolver.js")
 
 switch (args[0]) {
     case "model":
