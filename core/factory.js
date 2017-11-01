@@ -43,6 +43,24 @@ switch (args[0]) {
             }
         })
         break
+    case "type":
+        fs.exists(typePath, function (exists) {
+            if (exists) {
+                console.log(chalk.red(`Error! type ${args[1]} is exits!`));
+            } else {
+                createType(args[1])
+            }
+        })
+        break
+    case "resolver":
+        fs.exists(resolverPath, function (exists) {
+            if (exists) {
+                console.log(chalk.red(`Error! model ${args[1]} is exits!`));
+            } else {
+                createResolver(args[1])
+            }
+        })
+        break
     default:
         console.log("There are nothing here!")
 }
@@ -59,6 +77,8 @@ function createModel(name) {
             console.log(chalk.green(`Awesome! model ${name} was create succesfully!`));
         });
 }
+
+
 function createType(name) {
     fs.writeFile(
         typePath,
@@ -71,6 +91,8 @@ function createType(name) {
             console.log(chalk.green(`Awesome! type ${name} was create succesfully!`));
         });
 }
+
+
 function createResolver(name) {
     fs.writeFile(
         resolverPath,

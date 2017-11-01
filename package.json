@@ -7,7 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon --exec babel-node index.js",
     "make:model": "babel-node ./core/factory.js -- model",
-    "make:resource": "babel-node ./core/factory.js -- resouce"
+    "make:resource": "babel-node ./core/factory.js -- resouce",
+    "make:type": "babel-node ./core/factory.js -- type",
+    "make:resolver": "babel-node ./core/factory.js -- resolver"
   },
   "keywords": [
     "GraphQL",

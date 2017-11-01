@@ -1,18 +1,18 @@
 
 # Configs
-/config/db.js
+config/db.js
 
 #model 
-/app/model/*
-!/app/model/User.js
+app/models/*
+!app/models/User.js
 
 #typedefs
-/app/types/*
-!/app/types/User.js
+app/types/*
+!app/types/User.js
 
 #resolver
-/app/resolvers/*
-!/app/resolvers/UserResolver.js
+app/resolvers/*
+!app/resolvers/UserResolver.js
 
 # Logs
 logs

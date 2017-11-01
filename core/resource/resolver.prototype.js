@@ -1,7 +1,6 @@
 const plural = require('plural')
 function resolverPrototype(name) {
-    return `
-import mongoose from 'mongoose'
+    return `import mongoose from 'mongoose'
 import ${name} from '../models/${name}'
 const ${name}Resolver = {
     Query: {

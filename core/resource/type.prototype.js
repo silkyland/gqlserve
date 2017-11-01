@@ -1,7 +1,6 @@
 const plural = require('plural')
 function typePrototype(name) {
-    return `
-const ${name} = \`
+    return `const ${name} = \`
     type ${name} {
         _id: ID!,
         name: String,
