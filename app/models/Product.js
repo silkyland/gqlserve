@@ -11,4 +11,4 @@ schema.plugin(timestamps, {
     updatedAt: 'updated_at' 
 })
 
-export default mongoose.model('categories', schema)
+export default mongoose.model('products', schema)

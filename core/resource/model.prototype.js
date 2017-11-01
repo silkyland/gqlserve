@@ -1,4 +1,7 @@
+const plural = require('plural')
 
+function modelPrototype(txt) {
+    return `
 import mongoose from 'mongoose'
 import timestamps from 'mongoose-timestamp'
 
@@ -11,4 +14,7 @@ schema.plugin(timestamps, {
     updatedAt: 'updated_at' 
 })
 
-export default mongoose.model('categories', schema)
+export default mongoose.model('${plural(txt, 2).toLowerCase()}', schema)`
+}
+
+module.exports = modelPrototype
