@@ -3,10 +3,10 @@ import User from '../models/User'
 
 const UserResolver = {
     Query: {
-        users: async () => {
+        async users() {
             return await User.find()
         },
-        user: async (root, args) => {
+        async user(root, args) {
             return await User.findById(args._id)
         }
     },
@@ -26,5 +26,5 @@ const UserResolver = {
         }
     }
 }
-
+mongoose.disconnect()
 export default UserResolver
